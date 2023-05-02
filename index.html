@@ -8,37 +8,11 @@
 <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<script>
-  AFRAME.registerComponent("playstart", {
-    init: function () {
-      var myVideo = document.querySelector("#test");
-      this.el.addEventListener("click", function () {
-          myVideo.play();
-      }, {once: true})
-    }
-  })
-</script>
-
 <body>
 
 <style>
 div.a-enter-ar {
   visibility: hidden;
-}
-
-.button {
-  background-color: #F1F1F1;
-  border-style: double;
-  border-radius: 8px;
-  border-color: black;
-  color: black;
-  padding: 6px 4px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1em;
-  margin: 2px 2px;
-  cursor: pointer;
 }
 </style>
 
@@ -46,9 +20,8 @@ div.a-enter-ar {
   <a-camera wasd-controls-enabled="false"></a-camera>
 
   <a-assets>
-    <video id="test" autoplay loop="true" src="video/videotest.mp4"
+    <video id="test" autoplay loop="true" src="video/videotest.mp4" preload="true"
     playsinline webkit-playsinline></video>
-    <img id="button" src="images/playcir.png">
   </a-assets>
 
   <a-videosphere src="#test" rotation="0 180 0"></a-videosphere>
@@ -59,22 +32,6 @@ div.a-enter-ar {
       raycaster="objects: .clickable" material="color: black; shader: flat">
     </a-cursor>
     </a-camera>
-
-  <a-image class="clickable" id="control" src="#button"
-  position="0 1.6 -1" scale="3 3 3" opacity="0"
-  playstart></a-image>
-
-  <a-image class="clickable" id="control2" src="#button"
-  position="0 1.6 1" scale="3 3 3" opacity="0"
-  playstart></a-image>
-
-  <a-image class="clickable" id="control3" src="#button"
-  position="1 1.6 0" rotation="0 90 0" scale="3 3 3" opacity="0"
-  playstart></a-image>
-
-  <a-image class="clickable" id="control4" src="#button"
-  position="-1 1.6 0" rotation="0 -90 0" scale="3 3 3" opacity="0"
-  playstart></a-image>
 
 </a-scene>
 
