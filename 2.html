@@ -40,9 +40,16 @@ div.a-enter-ar {
   <img id="button" src="images/circle.png">
 </a-assets>
 
-<a-scene  raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse:false"
+<a-scene cursor__xrselect="rayOrigin: xrselect"
 loading-screen="dotsColor: white; backgroundColor: black">
-<a-camera wasd-controls-enabled="false"></a-camera>
+<a-camera look-controls wasd-controls-enabled="false">
+  <a-cursor raycaster="objects: .clickable" position="0 0 -1"
+            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+            material="color: black; shader: flat"
+            animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+            animation__mouseenter="property: components.material.material.color; type: color; to: blue; startEvents: mouseenter; dur: 500"
+            animation__mouseleave="property: components.material.material.color; type: color; to: black; startEvents: mouseleave; dur: 500">
+          </a-cursor></a-camera>
 
 <a-videosphere src="#quarantine" rotation="0 180 0"></a-videosphere>
 
