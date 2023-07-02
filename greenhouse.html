@@ -32,6 +32,12 @@ div.a-enter-ar {
 }
 </style>
 
+
+  <a-assets>
+    <img id="sky" src="images/greenhouse.jpg" alt="background">
+    <img id="button" src="images/circle.png" alt="">
+  </a-assets>
+
 <a-scene cursor__xrselect="rayOrigin: xrselect"
 loading-screen="dotsColor: white; backgroundColor: black">
 
@@ -44,11 +50,6 @@ loading-screen="dotsColor: white; backgroundColor: black">
             animation__mouseleave="property: components.material.material.color; type: color; to: red; startEvents: mouseleave; dur: 500">
           </a-cursor></a-camera>
 
-  <a-assets>
-    <img id="sky" src="images/greenhouse.jpg" alt="background">
-    <img id="button" src="images/circle.png" alt="">
-  </a-assets>
-
   <a-sky src="#sky" rotation="0 90 0"></a-sky>
 
   <a-image id="1" class="clickable"
@@ -57,7 +58,7 @@ loading-screen="dotsColor: white; backgroundColor: black">
      animation__zoom3="startEvents: show; property: scale; from: 1 1 1; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
      position="-5.5 0 3.5"
      rotation="-90 0 0"
-     weblink="url: bedroom.html">
+     weblink="url: bedroom-back.html">
   </a-image>
 
   <a-image id="2" class="clickable"
