@@ -34,9 +34,9 @@ div.a-enter-ar {
 
 
   <a-assets>
-    <img id="sky" src="images/greenhouse.jpg" alt="background">
+    <video id="sky" autoplay loop preload src="video/greenhouse.mp4"
+    playsinline webkit-playsinline></video>
     <img id="button" src="images/circle.png" alt="">
-    <audio id="bird" autoplay loop preload src="audio/bird.mp3" playsinline webkit-playsinline alt="">
   </a-assets>
 
 <a-scene cursor__xrselect="rayOrigin: xrselect"
@@ -52,7 +52,6 @@ loading-screen="dotsColor: white; backgroundColor: black">
           </a-cursor></a-camera>
 
   <a-sky src="#sky" rotation="0 90 0"></a-sky>
-  <a-sound src="#bird" position="3 2 -5"></a-sound>
 
   <a-image id="1" class="clickable"
      src="#button" width="1.5" height="1.5" opacity="1" scale="1"
