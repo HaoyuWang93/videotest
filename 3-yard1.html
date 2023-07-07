@@ -48,14 +48,25 @@ div.a-enter-ar {
   <a-sky src="#sky" rotation="0 90 0"></a-sky>
   <a-sound src="#bird" position="3 2 -5"></a-sound>
 
-  <a-image id="1" class="clickable"
-     src="#button" width="2" height="2" opacity="1" scale="1"
+  <a-image id="green" class="clickable"
+     src="#button" width="2.5" height="2.5" opacity="1"   scale="0"
+     animation__on="property: scale; to: 1; delay: 5000; dur: 100"
      animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
      animation__zoom3="startEvents: show; property: scale; from: 1 1 1; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
-     position="-8 0 3"
+     position="-2 0 10"
      rotation="-90 0 0"
-     weblink="url: construction.html">
+     weblink="url: 3-greenstand.html">
   </a-image>
+
+  <a-image id="door" class="clickable"
+  src="#button" width="1.5" height="1.5" opacity="1"   scale="0"
+  animation__on="property: scale; to: 1; delay: 5000; dur: 100"
+  animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
+  animation__zoom3="startEvents: show; property: scale; from: 1 1 1; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
+  position="3.5 0 -6"
+  rotation="-90 0 0"
+  weblink="url: construction.html">
+</a-image>
 
 
 </a-scene>
