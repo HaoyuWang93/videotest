@@ -37,16 +37,16 @@ div.a-enter-ar {
     <video id="sky" autoplay loop preload src="video/greenhouse.mp4"
     playsinline webkit-playsinline></video>
     <img id="button" src="images/circle.png" alt="">
-    <audio id="bird" autoplay loop preload src="audio/bird.mp3" playsinline webkit-playsinline alt="">
+    <audio id="cafe" autoplay loop preload src="audio/cafe1.mp3" playsinline webkit-playsinline alt="">
   </a-assets>
 
   <a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse: false;"
   loading-screen="dotsColor: white; backgroundColor: black">
-  
+
   <a-camera look-controls wasd-controls-enabled="false"></a-camera>
 
   <a-sky src="#sky" rotation="0 90 0"></a-sky>
-  <a-sound src="#bird" position="3 2 -5"></a-sound>
+  <a-sound src="#cafe" position="-1 1.5 -1"></a-sound>
 
   <a-image id="stand" class="clickable"
      src="#button" width="1" height="1" opacity="1"  scale="0"
