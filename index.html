@@ -7,7 +7,6 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -42,12 +41,22 @@
    }
 })
 
+AFRAME.registerComponent("waking2", {
+init: function() {
+ var pieces = document.querySelectorAll(".dialogue, .clickable")
+ this.el.addEventListener("click", e => {
+   for (let piece of pieces) {
+     piece.emit("show2")}
+ }, {once: true})
+}
+})
+
     AFRAME.registerComponent("waked", {
   init: function() {
      var pieces = document.querySelectorAll(".dialogue, .clickable")
      this.el.addEventListener("click", e => {
        for (let piece of pieces) {
-         piece.emit("show2")}
+         piece.emit("show3")}
      }, {once: true})
    }
 })
@@ -86,25 +95,39 @@ loading-screen="dotsColor: white; backgroundColor: black">
 
   <a-videosphere src="#wakeup" rotation="0 0 0"></a-videosphere>
 
-  <a-text class="clickable" value="...I had a weird dream where
-  the pandemic came to an end..."
+  <a-text class="dialogue" value="[Click the Flashing Texts/Signs to Proceed]"
+  color="white" position="0 1.5 -1" scale="1" opacity="1" align="center"
+  width="1.25" rotation="0 0 0"
+  animation__off="startEvents: show0; property: scale; to: 0; dur: 100"></a-text>
+
+  <a-text class="clickable" value="...I had that weird dream again...
+  where the pandemic ended like magic..."
   color="white" position="0 2 -1" scale="1" opacity="1" align="center"
-  width="1" rotation="30 0 0" geometry="primitive:plane; width:0.65; height:0.12" material="color:black"
+  width="1" rotation="30 0 0" geometry="primitive:plane; width:0.75; height:0.12" material="color:black"
   animation__flash="property: opacity; to: 0; dur: 1500; dir: alternate; loop: true"
   animation__off="startEvents: click; property: scale; to: 0; dur: 100"
   waking0></a-text>
 
-  <a-text class="clickable" value="maybe I was just puzzled by
-  this Arctic summer daylight..." color="white" position="0 2 -1" scale="0" opacity="1" align="center"
+  <a-text class="clickable" value="maybe I'm just puzzled by the
+  24-hour daylight here..." color="white" position="0 2 -1" scale="0" opacity="1" align="center"
   width="1" rotation="30 0 0" geometry="primitive:plane; width:0.6; height:0.12" material="color:black"
   animation__on="startEvents: show0; property: scale; to: 1; dur: 100"
   animation__flash="property: opacity; to: 0; dur: 1500; dir: alternate; loop: true"
   animation__off="startEvents: click; property: scale; to: 0; dur: 100"
   waking1></a-text>
 
+  <a-text class="clickable" value="...nevertheless, this is
+  the best social distancing spot
+  I could book for this summer" color="white" position="0 2 -1" scale="0" opacity="1" align="center"
+  width="1" rotation="30 0 0" geometry="primitive:plane; width:0.6; height:0.15" material="color:black"
+  animation__on="startEvents: show1; property: scale; to: 1; dur: 100"
+  animation__flash="property: opacity; to: 0; dur: 1500; dir: alternate; loop: true"
+  animation__off="startEvents: click; property: scale; to: 0; dur: 100"
+  waking2></a-text>
+
   <a-text class="clickable" value="Wake Up Time?" color="white" position="0 2 -1" scale="0" opacity="1" align="center"
   width="2" rotation="30 0 0" geometry="primitive:plane; width:0.6; height:0.12" material="color:black"
-  animation__on="startEvents: show1; property: scale; to: 1; dur: 100"
+  animation__on="startEvents: show2; property: scale; to: 1; dur: 100"
   animation__flash="property: opacity; to: 0; dur: 1500; dir: alternate; loop: true"
   animation__off="startEvents: click; property: scale; to: 0; dur: 100"
   sound="on: click; delay: 12000; src: #notification"
@@ -114,22 +137,15 @@ loading-screen="dotsColor: white; backgroundColor: black">
   <a-image id="screen" class="dialogue"
      src="#button" width="1" height="1" opacity="1" scale="0"
      position="-1 1.5 -1" rotation="0 45 0"
-     animation__on="startEvents: show2; property: scale; to: 1; delay: 11000; dur: 100">
+     animation__on="startEvents: show3; property: scale; to: 1; delay: 11000; dur: 100">
   </a-image>
 
   <a-text class="clickable" value="I'm Ready :)"
   color="#aaff7f" opacity="1" align="center" scale="0"
-  width="2" position="-1 1.4 -1" rotation="0 45 0"geometry="primitive:plane; width:0.75; height:0.13" material="opacity:0"
-  animation__on="startEvents: show2; property: scale; to: 1; delay: 12000; dur: 100"
-  animation__flash="property: opacity; to: 0.5; dur: 800; dir: alternate; loop: true"
+  width="3" position="-1 1.3 -1" rotation="0 45 0"geometry="primitive:plane; width:0.75; height:0.13" material="opacity:0"
+  animation__on="startEvents: show3; property: scale; to: 1; delay: 12000; dur: 100"
+  animation__flash="property: opacity; to: 0; dur: 800; dir: alternate; loop: true"
   weblink="url: 1-bedroom.html"></a-text>
-
-  <a-text class="clickable" value="Report Health Emergency"
-  color="red" opacity="1" align="center" scale="0"
-  width="1.5" position="-1 1.2 -1" rotation="0 45 0"geometry="primitive:plane; width:0.75; height:0.1" material="opacity:0"
-  animation__on="startEvents: show2; property: scale; to: 1; delay: 12000; dur: 100"
-  animation__flash="property: opacity; to: 0.5; dur: 800; dir: alternate; loop: true"
-  weblink="url: health.html"></a-text>
 
   </a-scene>
 
