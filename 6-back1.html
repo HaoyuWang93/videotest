@@ -35,6 +35,7 @@ div.a-enter-ar {
     <video id="sky" autoplay loop preload src="video/back1.mp4"
     playsinline webkit-playsinline></video>
     <img id="arrow" src="images/arrow.png" alt="">
+    <img id="phone" src="images/phone-back.png">
     <audio id="thunder" autoplay loop preload src="audio/thunder.mp3" playsinline webkit-playsinline alt="">
   </a-assets>
 
@@ -45,6 +46,12 @@ div.a-enter-ar {
 
   <a-sky src="#sky" rotation="0 0 0"></a-sky>
   <a-sound src="#thunder" position="0 0 0"></a-sound>
+
+  <a-image id="screen"
+     src="#phone" width="1" height="1" opacity="1" scale="0"
+     position="-1 1.5 -1" rotation="0 45 0"
+     animation__on="property: scale; to: 1; delay: 5000; dur: 100">
+  </a-image>
 
   <a-image id="proceed" class="clickable"
     src="#arrow" width="1.75" height="1.75" opacity="1"  scale="0"
