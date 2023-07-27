@@ -5,12 +5,14 @@
   <title>Wake Up from 2020</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <script src="aframe\aframe.min.js"></script>
 </head>
 
 <body>
 
 <script>
+  document.querySelector('a-scene').enterVR()
+  
 AFRAME.registerComponent("walk0", {
 init: function() {
  var pieces = document.querySelectorAll(".dialogue, .clickable")
@@ -48,9 +50,9 @@ div.a-enter-vr {
   <a-assets>
     <video id="sky" autoplay loop preload src="video/yard1.mp4"
     playsinline webkit-playsinline></video>
-    <img id="button" src="images/circle.png" alt=""></img>
-    <img id="arrow" src="images/arrow.png" alt=""></img>
-    <img id="phone" src="images/phone-walk.png"></img>
+    <img id="button" src="images/circle.png" alt="">
+    <img id="arrow" src="images/arrow.png" alt="">
+    <img id="phone" src="images/phone-walk.png">
   </a-assets>
 
   <a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse: false;"

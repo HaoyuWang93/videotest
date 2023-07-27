@@ -5,11 +5,13 @@
   <title>Wake Up from 2020</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <script src="aframe\aframe.min.js"></script>
 
 <body>
 
 <script>
+  document.querySelector('a-scene').enterVR()
+  
   AFRAME.registerComponent("weblink", {
   schema: {
     url: {
@@ -37,7 +39,7 @@ div.a-enter-vr {
   <a-assets>
     <video id="sky" autoplay loop preload src="video/back2.mp4"
     playsinline webkit-playsinline></video>
-    <img id="arrow" src="images/arrow.png" alt=""></img>
+    <img id="arrow" src="images/arrow.png" alt="">
     <audio id="thunder" autoplay loop preload src="audio/thunder.mp3" playsinline webkit-playsinline alt=""></audio>
   </a-assets>
 
