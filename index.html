@@ -13,7 +13,11 @@
 
   <script>
 
-    document.querySelector('a-scene').enterVR()
+AFRAME.registerComponent('auto-enter-vr', {
+  init: function () {
+    this.el.sceneEl.enterVR();
+  }
+});
 
     AFRAME.registerComponent("playstart", {
       init: function () {
@@ -95,7 +99,7 @@ init: function() {
     </a-assets>
 
 <a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse: false;"
-loading-screen="dotsColor: white; backgroundColor: black">
+loading-screen="dotsColor: white; backgroundColor: black" auto-enter-vr>
 
 <a-camera look-controls wasd-controls-enabled="false"></a-camera>
 
