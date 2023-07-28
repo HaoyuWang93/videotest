@@ -51,6 +51,19 @@ init: function() {
  }, {once: true})
 }
 })
+
+AFRAME.registerComponent("weblink", {
+schema: {
+  url: {
+    default: ""
+  }
+},
+init: function() {
+  this.el.addEventListener("click", (e) => {
+    window.location = this.data.url;
+  })
+}
+})
   </script>
 
   <style>
@@ -84,7 +97,7 @@ loading-screen="dotsColor: white; backgroundColor: black">
   <a-text class="clickable" value="...seems like I'm not I'm not ready to work yet..."
   color="white" position="0 1.6 -1" scale="0" opacity="1" align="center"
   width="1" rotation="0 0 0" geometry="primitive:plane; width:0.9; height:0.1" material="opacity: 0"
-  animation__on="delay: 32000; property: scale; to: 1; dur: 100"
+  animation__on="delay: 34000; property: scale; to: 1; dur: 100"
   animation__flash="property: opacity; to: 0; dur: 1500; dir: alternate; loop: true"
   animation__off="startEvents: click; property: scale; to: 0; dur: 100"
   waking0></a-text>
@@ -97,8 +110,8 @@ loading-screen="dotsColor: white; backgroundColor: black">
   animation__off="startEvents: click; property: scale; to: 0; dur: 100"
   waking1></a-text>
 
-  <a-text class="clickable" value="...or maybe its not really a 
-  'summer dizziness' as what they said"
+  <a-text class="clickable" value="...or maybe its not really a
+  'summer dizziness' or 'daydream'"
   color="white" position="0 1.6 -1" scale="0" opacity="1" align="center"
   width="1" rotation="0 0 0" geometry="primitive:plane; width:1; height:0.12" material="opacity: 0"
   animation__on="startEvents: show1; property: scale; to: 1; dur: 100"
@@ -116,12 +129,19 @@ loading-screen="dotsColor: white; backgroundColor: black">
   animation__off="startEvents: click; property: scale; to: 0; dur: 100"
   waking3></a-text>
 
-  <a-text class="dialogue" value="Am I awake right now?
-
-  [ END ]"
+  <a-text class="dialogue" value="Am I awake right now?"
   color="white" position="0 1.6 -1" scale="0" opacity="1" align="center"
-  width="1" rotation="0 0 0" geometry="primitive:plane; width:0.5; height:0.1" material="opacity: 0"
+  width="1" rotation="0 0 0"
   animation__on="startEvents: show3; property: scale; to: 1; dur: 100"></a-text>
+
+  <a-text class="clickable" value="[RESTART DREAM]"
+  color="white" position="0 1.4 -1" scale="0" opacity="1" align="center"
+  width="1" rotation="0 0 0" geometry="primitive:plane; width:0.5; height:0.1" material="opacity: 0"
+  animation__on="startEvents: show3; delay: 1500; property: scale; to: 1; dur: 100"
+  animation__flash="property: opacity; to: 0; dur: 1500; dir: alternate; loop: true"
+  weblink="url: index.html"></a-text>
+
+
 
 
   </a-scene>
