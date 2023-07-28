@@ -11,6 +11,12 @@
 <body>
 
 <script>
+AFRAME.registerComponent('auto-enter-vr', {
+  init: function () {
+    this.el.sceneEl.enterVR();
+  }
+});
+
 AFRAME.registerComponent("walk0", {
 init: function() {
  var pieces = document.querySelectorAll(".dialogue, .clickable")
@@ -54,7 +60,7 @@ div.a-enter-vr {
   </a-assets>
 
   <a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse: false;"
-  loading-screen="dotsColor: white; backgroundColor: black">
+  loading-screen="dotsColor: white; backgroundColor: black" auto-enter-vr>
 
   <a-camera look-controls wasd-controls-enabled="false"></a-camera>
 

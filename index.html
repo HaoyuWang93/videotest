@@ -12,6 +12,11 @@
 <body>
 
   <script>
+    AFRAME.registerComponent('auto-enter-vr', {
+      init: function () {
+        this.el.sceneEl.enterVR();
+      }
+    });
 
     AFRAME.registerComponent("playstart", {
       init: function () {
@@ -93,7 +98,7 @@ init: function() {
     </a-assets>
 
 <a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse: false;"
-loading-screen="dotsColor: white; backgroundColor: black">
+loading-screen="dotsColor: white; backgroundColor: black" auto-enter-vr>
 
 <a-camera look-controls wasd-controls-enabled="false"></a-camera>
 
@@ -112,7 +117,7 @@ loading-screen="dotsColor: white; backgroundColor: black">
   animation__off="startEvents: click; property: scale; to: 0; dur: 100"
   waking0></a-text>
 
-  <a-text class="clickable" value="maybe its just a side effect 
+  <a-text class="clickable" value="maybe its just a side effect
   of my recent dizziness issues
   under the 24-hour daylight here..." color="white" position="0 2 -1" scale="0" opacity="1" align="center"
   width="1" rotation="30 0 0" geometry="primitive:plane; width:0.75; height:0.15" material="opacity: 0"
