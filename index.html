@@ -94,14 +94,12 @@ init: function() {
       <img id="button" src="images/phone.png">
     </a-assets>
 
-<a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse: false;"
+<a-scene laser-controls="hand: left" raycaster="objects: .clickable" oculus-touch-controls="hand: left"
 loading-screen="dotsColor: white; backgroundColor: black" auto-enter-vr>
 
 <a-camera look-controls wasd-controls-enabled="false"></a-camera>
 
   <a-videosphere src="#wakeup" rotation="0 0 0"></a-videosphere>
-
-<a-entity id="pointer" pointlaser="color: red; distance: 30; diameter: 0.05"></a-entity>
 
   <a-text class="dialogue" value="[Click the Flashing Texts/Signs to Proceed]"
   color="white" position="0 1.5 -1" scale="1" opacity="1" align="center"
