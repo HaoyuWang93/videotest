@@ -40,9 +40,6 @@
 div.a-enter-ar {
   visibility: hidden;
 }
-div.a-enter-vr {
-  visibility: hidden;
-}
 </style>
 
 <a-assets>
@@ -52,10 +49,13 @@ div.a-enter-vr {
   <img id="button" src="images/coffee.png">
 </a-assets>
 
-<a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse: false;"
-loading-screen="dotsColor: white; backgroundColor: black" auto-enter-vr>
+<a-scene raycaster="objects: .clickable" cursor__xrselect="rayOrigin: xrselect"
+loading-screen="dotsColor: white; backgroundColor: black">
 
 <a-camera look-controls wasd-controls-enabled="false"></a-camera>
+
+  <a-entity laser-controls="hand: right"
+  raycaster="objects: .clickable; far: 1; lineColor: red; lineOpacity: 0.5"></a-entity>
 
   <a-sky src="#sky" rotation="0 90 0"></a-sky>
 
