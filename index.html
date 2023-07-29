@@ -65,19 +65,6 @@ init: function() {
      }, {once: true})
    }
 })
-
-AFRAME.registerComponent("weblink", {
-schema: {
-  url: {
-    default: ""
-  }
-},
-init: function() {
-  this.el.addEventListener("click", (e) => {
-    window.location = this.data.url;
-  })
-}
-})
   </script>
 
   <style>
@@ -103,7 +90,7 @@ loading-screen="dotsColor: white; backgroundColor: black">
 
   <a-videosphere src="#wakeup" rotation="0 0 0"></a-videosphere>
 
-  <a-text class="dialogue" value="[TEXT-ENTITY?
+  <a-text class="dialogue" value="[TEXT-ENTITY???
   Click the 'VR' button to start]
 
   [Pull the right-hand trigger
@@ -164,7 +151,7 @@ loading-screen="dotsColor: white; backgroundColor: black">
   width="3" position="-1 1.3 -1" rotation="0 45 0"geometry="primitive:plane; width:0.75; height:0.15" material="opacity:0"
   animation__on="startEvents: show3; property: scale; to: 1; delay: 13000; dur: 100"
   animation__flash="property: opacity; to: 0; dur: 800; dir: alternate; loop: true"
-  link="href:1-bedroom.html"></a-entity>
+  link="href: 1-bedroom.html"></a-entity>
 
   </a-scene>
 
