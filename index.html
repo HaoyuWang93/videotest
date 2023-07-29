@@ -74,7 +74,7 @@ schema: {
 },
 init: function() {
   this.el.addEventListener("click", (e) => {
-    window.location = this.data.url;
+    window.location = this.data.href;
   })
 }
 })
@@ -164,10 +164,11 @@ loading-screen="dotsColor: white; backgroundColor: black">
   width="3" position="-1 1.3 -1" rotation="0 45 0"geometry="primitive:plane; width:0.75; height:0.15" material="opacity:0"
   animation__on="startEvents: show3; property: scale; to: 1; delay: 13000; dur: 100"
   animation__flash="property: opacity; to: 0; dur: 800; dir: alternate; loop: true"
-  weblink="url: 1-bedroom.html"></a-text>
+  weblink="href: 1-bedroom.html"></a-text>
 
   <a-link class="clickable" href="1-bedroom.html" image="#button" title="stand"
-  position="-1 1.5 -5"></a-link>
+  rotation="0 0 0"
+  position="1 1.5 -5"></a-link>
 
   </a-scene>
 
