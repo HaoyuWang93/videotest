@@ -88,16 +88,14 @@ init: function() {
       <img id="button" src="images/phone.png">
     </a-assets>
 
-<a-scene raycaster="objects: .clickable" cursor="rayOrigin: entity; fuse: false;"
+<a-scene raycaster="objects: .clickable" laser-controls="hand: right" line="color: red"
 loading-screen="dotsColor: white; backgroundColor: black">
 
 <a-camera look-controls wasd-controls-enabled="false"></a-camera>
 
   <a-videosphere src="#wakeup" rotation="0 0 0"></a-videosphere>
 
-  <a-entity laser-controls="hand: right" raycaster="objects: .clickable" line="color: red"></a-entity>
-
-  <a-text class="dialogue" value="[Press the VR button to start]
+  <a-text class="dialogue" value="TEST A-SCENE CONTROL [Press the VR button to start]
   [Click the Flashing Texts/Signs to Proceed]"
   color="white" position="0 1.5 -1" scale="1" opacity="1" align="center"
   width="0.75" rotation="0 0 0"
