@@ -16,6 +16,12 @@
   device.requestPresent([{source: renderer.domElement}]);
 });
 
+  AFRAME.registerComponent('auto-enter-vr', {
+    init: function () {
+      this.el.sceneEl.enterVR();
+    }
+  });
+
   AFRAME.registerComponent("weblink", {
   schema: {
     url: {
@@ -47,7 +53,7 @@ div.a-enter-vr {
 </a-assets>
 
 <a-scene raycaster="objects: .clickable" cursor__xrselect="rayOrigin: xrselect"
-loading-screen="dotsColor: white; backgroundColor: black">
+loading-screen="dotsColor: white; backgroundColor: black" auto-enter-vr>
 
 <a-camera look-controls wasd-controls-enabled="false"></a-camera>
 
@@ -69,8 +75,11 @@ loading-screen="dotsColor: white; backgroundColor: black">
      animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
      position="3.5 1.2 -1.9"
      rotation="0 -45 0"
-     weblink>
+     weblink"url: 2-greenhouse.html">
   </a-image>
+
+    <a-link href="2-greenhouse.html" position="-1 1.5 -5"
+    image="#button" title="greenhouse"></a-link>
 
 </a-scene>
 
