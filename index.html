@@ -88,7 +88,7 @@ init: function() {
       <img id="button" src="images/phone.png">
     </a-assets>
 
-<a-scene raycaster="objects: .clickable"
+<a-scene raycaster="objects: .clickable" cursor="rayOrigin: entity; fuse: false;"
 loading-screen="dotsColor: white; backgroundColor: black">
 
 <a-camera look-controls wasd-controls-enabled="false"></a-camera>
@@ -98,7 +98,7 @@ loading-screen="dotsColor: white; backgroundColor: black">
   <a-entity oculus-touch-controls="hand: left" line="color: red"></a-entity>
   <a-entity oculus-touch-controls="hand: right" line="color: red"></a-entity>
 
-  <a-text class="dialogue" value="TWO HANDS [Press the VR button to start]
+  <a-text class="dialogue" value="TWO HAND [Press the VR button to start]
   [Click the Flashing Texts/Signs to Proceed]"
   color="white" position="0 1.5 -1" scale="1" opacity="1" align="center"
   width="0.75" rotation="0 0 0"
