@@ -90,7 +90,7 @@ loading-screen="dotsColor: white; backgroundColor: black">
 
   <a-videosphere src="#wakeup" rotation="0 0 0"></a-videosphere>
 
-  <a-text class="dialogue" value="[TEXT-ENTITY
+  <a-text class="dialogue" value="[comparison
   Click the 'VR' button to start]
 
   [Pull the right-hand trigger
@@ -109,7 +109,7 @@ loading-screen="dotsColor: white; backgroundColor: black">
   <a-text class="clickable" value="...I had that weird dream again...
   where the pandemic ended like magic..."
   color="white" position="0 2 -1" scale="1" opacity="1" align="center"
-  width="1" rotation="30 0 0" geometry="primitive:plane; width:0.75; height:0.15" material="opacity: 0"
+  width="1" rotation="30 0 0" geometry="primitive:plane; width:0.75; height:0.2" material="opacity: 0"
   animation__flash="property: opacity; to: 0; dur: 1500; dir: alternate; loop: true"
   animation__off="startEvents: click; property: scale; to: 0; dur: 100"
   waking0></a-text>
@@ -152,6 +152,11 @@ loading-screen="dotsColor: white; backgroundColor: black">
   animation__on="startEvents: show3; property: scale; to: 1; delay: 13000; dur: 100"
   animation__flash="property: opacity; to: 0; dur: 800; dir: alternate; loop: true"
   link="href: 1-bedroom.html"></a-entity>
+
+  <a-link class="clickable" href="1-bedroom.html" image="#button" scale="0.25 0.25 0.25"
+  position="1 1 -5"></a-link>
+
+
   </a-scene>
 
 </body>
