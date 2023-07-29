@@ -12,7 +12,6 @@
 <body>
 
   <script>
-
     AFRAME.registerComponent("playstart", {
       init: function () {
         var myVideo = document.querySelector("#wakeup");
@@ -89,12 +88,15 @@ init: function() {
       <img id="button" src="images/phone.png">
     </a-assets>
 
-<a-scene laser-controls="hand: left" raycaster="objects: .clickable" oculus-touch-controls="hand: left"
+<a-scene
 loading-screen="dotsColor: white; backgroundColor: black">
 
 <a-camera look-controls wasd-controls-enabled="false"></a-camera>
 
   <a-videosphere src="#wakeup" rotation="0 0 0"></a-videosphere>
+
+  <a-entity laser-controls="hand: left" raycaster="objects: .clickable" line="color: red"></a-entity>
+  <a-entity oculus-touch-controls="hand: left"></a-entity>
 
   <a-text class="dialogue" value="[Click the Flashing Texts/Signs to Proceed]"
   color="white" position="0 1.5 -1" scale="1" opacity="1" align="center"
