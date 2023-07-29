@@ -16,12 +16,6 @@
   device.requestPresent([{source: renderer.domElement}]);
 });
 
-  AFRAME.registerComponent('auto-enter-vr', {
-    init: function () {
-      this.el.sceneEl.enterVR();
-    }
-  });
-
   AFRAME.registerComponent("weblink", {
   schema: {
     url: {
@@ -40,6 +34,9 @@
 div.a-enter-ar {
   visibility: hidden;
 }
+div.a-enter-vr {
+  visibility: hidden;
+}
 </style>
 
 <a-assets>
@@ -55,7 +52,7 @@ loading-screen="dotsColor: white; backgroundColor: black">
 <a-camera look-controls wasd-controls-enabled="false"></a-camera>
 
   <a-entity laser-controls="hand: right"
-  raycaster="objects: .clickable; far: 1; lineColor: red; lineOpacity: 0.5"></a-entity>
+  raycaster="objects: .clickable; far: 2; lineColor: red; lineOpacity: 0.5"></a-entity>
 
   <a-sky src="#sky" rotation="0 90 0"></a-sky>
 
