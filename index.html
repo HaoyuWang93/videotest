@@ -12,11 +12,6 @@
 <body>
 
   <script>
-    AFRAME.registerComponent('auto-enter-vr', {
-      init: function () {
-        this.el.sceneEl.enterVR();
-      }
-    });
 
     AFRAME.registerComponent("playstart", {
       init: function () {
@@ -95,7 +90,7 @@ init: function() {
     </a-assets>
 
 <a-scene laser-controls="hand: left" raycaster="objects: .clickable" oculus-touch-controls="hand: left"
-loading-screen="dotsColor: white; backgroundColor: black" auto-enter-vr>
+loading-screen="dotsColor: white; backgroundColor: black">
 
 <a-camera look-controls wasd-controls-enabled="false"></a-camera>
 
