@@ -6,11 +6,16 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="aframe\aframe.min.js"></script>
+  <script src="js\jquery-3.7.0.min.js"></script>
 </head>
 
 <body>
 
   <script>
+  window.addEventListener('vrdisplayactivate', function () {
+  device.requestPresent([{source: renderer.domElement}]);
+});
+
   AFRAME.registerComponent('auto-enter-vr', {
     init: function () {
       this.el.sceneEl.enterVR();
@@ -28,7 +33,7 @@
       window.location = this.data.url;
     })
   }
-})
+  })
 </script>
 
 <style>
@@ -67,7 +72,7 @@ loading-screen="dotsColor: white; backgroundColor: black" auto-enter-vr>
      animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
      position="3.5 1.2 -1.9"
      rotation="0 -45 0"
-     weblink="url: 2-greenhouse.html">
+     weblink>
   </a-image>
 
 </a-scene>

@@ -7,11 +7,16 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="aframe\aframe.min.js"></script>
+  <script src="js\jquery-3.7.0.min.js"></script>
 </head>
 
 <body>
 
   <script>
+  window.addEventListener('vrdisplayactivate', function () {
+  device.requestPresent([{source: renderer.domElement}]);
+  });
+
     AFRAME.registerComponent("playstart", {
       init: function () {
         var myVideo = document.querySelector("#wakeup");
@@ -81,7 +86,6 @@ init: function() {
   }
   </style>
 
-
     <a-assets>
       <video id="wakeup" loop="false" preload src="video/wakeup1.mp4"
       playsinline webkit-playsinline></video>
@@ -99,7 +103,7 @@ loading-screen="dotsColor: white; backgroundColor: black">
   <a-entity laser-controls="hand: right"
   raycaster="objects: .clickable; lineColor: red; lineOpacity: 0.5"></a-entity>
 
-  <a-text class="dialogue" value="[Press the 'VR' button to start]
+  <a-text class="dialogue" value="TEST AGAIN [Press the 'VR' button to start]
 
   [Pull the right-hand trigger
   on the Flashing Texts/Objects
