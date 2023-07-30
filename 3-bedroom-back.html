@@ -11,12 +11,6 @@
 <body>
 
 <script>
-AFRAME.registerComponent('auto-enter-vr', {
-  init: function () {
-    this.el.sceneEl.enterVR();
-  }
-});
-
   AFRAME.registerComponent("weblink", {
   schema: {
     url: {
@@ -48,7 +42,7 @@ div.a-enter-vr {
 </a-assets>
 
 <a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse: false;"
-loading-screen="dotsColor: white; backgroundColor: black" auto-enter-vr>
+loading-screen="dotsColor: white; backgroundColor: black">
 
 <a-camera look-controls wasd-controls-enabled="false"></a-camera>
 
