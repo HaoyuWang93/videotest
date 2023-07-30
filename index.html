@@ -17,6 +17,12 @@
   device.requestPresent([{source: renderer.domElement}]);
   });
 
+  AFRAME.registerComponent('auto-enter-vr', {
+    init: function () {
+      this.el.sceneEl.enterVR();
+    }
+  });
+
     AFRAME.registerComponent("playstart", {
       init: function () {
         var myVideo = document.querySelector("#wakeup");
@@ -81,7 +87,7 @@ init: function() {
     </a-assets>
 
 <a-scene raycaster="objects: .clickable" cursor__xrselect="rayOrigin: xrselect"
-loading-screen="dotsColor: white; backgroundColor: black">
+loading-screen="dotsColor: white; backgroundColor: black" auto-enter-vr>
 
 <a-camera look-controls wasd-controls-enabled="false"></a-camera>
 
