@@ -14,7 +14,7 @@
   <script>
   window.addEventListener('vrdisplayactivate', function () {
   device.requestPresent([{source: renderer.domElement}]);
-});
+  });
 
 AFRAME.registerComponent('auto-enter-vr', {
   init: function () {
@@ -25,6 +25,9 @@ AFRAME.registerComponent('auto-enter-vr', {
 
 <style>
 div.a-enter-ar {
+  visibility: hidden;
+}
+div.a-enter-vr {
   visibility: hidden;
 }
 </style>

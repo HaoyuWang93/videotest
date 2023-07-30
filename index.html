@@ -17,12 +17,6 @@
   device.requestPresent([{source: renderer.domElement}]);
   });
 
-  AFRAME.registerComponent('auto-enter-vr', {
-    init: function () {
-      this.el.sceneEl.enterVR();
-    }
-  });
-
     AFRAME.registerComponent("playstart", {
       init: function () {
         var myVideo = document.querySelector("#wakeup");
@@ -87,7 +81,7 @@ init: function() {
     </a-assets>
 
 <a-scene raycaster="objects: .clickable" cursor__xrselect="rayOrigin: xrselect"
-loading-screen="dotsColor: white; backgroundColor: black" auto-enter-vr>
+loading-screen="dotsColor: white; backgroundColor: black">
 
 <a-camera look-controls wasd-controls-enabled="false"></a-camera>
 
@@ -158,11 +152,6 @@ loading-screen="dotsColor: white; backgroundColor: black" auto-enter-vr>
   animation__on="startEvents: show3; property: scale; to: 1; delay: 13000; dur: 100"
   animation__flash="property: opacity; to: 0; dur: 800; dir: alternate; loop: true"
   link="href: 1-bedroom.html"></a-entity>
-
-  <a-link class="clickable" href="1-bedroom.html" image="#button" scale="0.25 0.25 0.25"
-  position="1 1 -5"></a-link>
-
-
   </a-scene>
 
 </body>
