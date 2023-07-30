@@ -15,12 +15,6 @@
   window.addEventListener('vrdisplayactivate', function () {
   device.requestPresent([{source: renderer.domElement}]);
 });
-
-  AFRAME.registerComponent('auto-enter-vr', {
-    init: function () {
-      this.el.sceneEl.enterVR();
-    }
-  });
 </script>
 
 <style>
@@ -37,7 +31,7 @@ div.a-enter-ar {
 </a-assets>
 
 <a-scene raycaster="objects: .clickable" cursor__xrselect="rayOrigin: xrselect"
-loading-screen="dotsColor: white; backgroundColor: black" auto-enter-vr>
+loading-screen="dotsColor: white; backgroundColor: black">
 
 <a-camera look-controls wasd-controls-enabled="false"></a-camera>
 
