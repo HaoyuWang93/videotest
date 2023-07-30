@@ -46,6 +46,9 @@ div.a-enter-vr {
 
   <a-camera look-controls wasd-controls-enabled="false"></a-camera>
 
+    <a-entity laser-controls="hand: right"
+    raycaster="objects: .clickable; lineColor: red; lineOpacity: 0.5"></a-entity>
+
   <a-sky src="#sky" rotation="0 90 0"></a-sky>
   <a-sound src="#cafe" position="-1 1.5 -1"></a-sound>
 

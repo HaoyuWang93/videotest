@@ -6,6 +6,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="aframe\aframe.min.js"></script>
+  <script src="js\jquery-3.7.0.min.js"></script>
 </head>
 
 <body>
@@ -22,7 +23,7 @@
       window.location = this.data.url;
     })
   }
-})
+});
 </script>
 
 <style>
@@ -46,6 +47,9 @@ loading-screen="dotsColor: white; backgroundColor: black">
 
 <a-camera look-controls wasd-controls-enabled="false"></a-camera>
 
+  <a-entity laser-controls="hand: right"
+  raycaster="objects: .clickable; lineColor: red; lineOpacity: 0.5"></a-entity>
+
   <a-sky src="#sky" rotation="0 90 0"></a-sky>
 
   <a-image id="screen"
@@ -61,7 +65,7 @@ loading-screen="dotsColor: white; backgroundColor: black">
      animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
      position="3.5 1.2 -1.9"
      rotation="0 -45 0"
-     weblink="url: 2-greenhouse.html">
+     link="href: 2-greenhouse.html">
   </a-image>
 
 </a-scene>
